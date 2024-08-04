@@ -5,52 +5,6 @@ import {Tablo} from "./Tablo";
 import {Input} from "./Input";
 
 
-function Settings(props: {
-    startValue: number,
-    maxi: number,
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
-    onChange1: (e: React.ChangeEvent<HTMLInputElement>) => void,
-    disabled: boolean,
-    onClick: () => void
-}) {
-    return <div className={"counter"}>
-
-        <div className={"settings"}>
-            <Input startValue={props.startValue} maxi={props.maxi} value={props.maxi} name={"Max Value"}
-                   onChange={props.onChange}/>
-            <Input startValue={props.startValue} maxi={props.maxi} name={"Start Value"} value={props.startValue}
-                   onChange={props.onChange1}/>
-
-        </div>
-
-        <div className={"footer"}>
-            <Button disabled={props.disabled} name={"Set"} onClick={props.onClick}/>
-        </div>
-    </div>;
-}
-
-function Counter(props: {
-    cifra: number,
-    max: number,
-    startValue: number,
-    disabled: boolean,
-    onClick: () => void,
-    reset: () => void
-    switchToggle: () => void
-}) {
-    return <div className={"counter"}>
-
-        <div className={"cifra"}>
-            <Tablo cifra={props.cifra} max={props.max} start_value={props.startValue} disabled={props.disabled}/>
-        </div>
-
-        <div className={"footer"}>
-            <Button disabled={props.cifra === props.max} name={"Inc"} onClick={props.onClick}/>
-            <Button disabled={props.cifra === 0} name={"Reset"} onClick={props.reset}/>
-            <Button disabled={props.disabled} name={"Set"} onClick={props.switchToggle}/>
-        </div>
-    </div>;
-}
 
 function App() {
     const getInitialCifra = () => {
